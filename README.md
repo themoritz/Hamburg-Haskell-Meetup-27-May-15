@@ -1,6 +1,6 @@
 # Trading Engine in Haskell
 
-/Moritz Drexl - May 27, 2015/
+*Moritz Drexl - May 27, 2015*
 
 Snippets can be found in [snippets.md](snippets.md).
 

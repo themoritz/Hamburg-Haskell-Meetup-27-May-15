@@ -1,6 +1,6 @@
-# Correct Integer Arithmetic
+## Correct Integer Arithmetic
 
-## Wrapping in Newtype
+### Wrapping in Newtype
 
 ```haskell
 precPrice :: Int
@@ -23,14 +23,14 @@ instance Show Price where
     show (Price p) = showUnit p precPrice
 ```
 
-## Safe Multiplication
+### Safe Multiplication
 
 ```haskell
 priceAmount :: Price -> Amount -> Volume
 priceAmount (Price p) (Amount a) = Volume (p * a)
 ```
 
-# Engine Monad
+## Engine Monad
 
 ```haskell
 newtype UpdateEngineT m a = UpdateEngineT
@@ -67,7 +67,7 @@ liftQuery m = do
         Right a -> return a
 ```
 
-## Running the Engine
+### Running the Engine
 
 ```haskell
 processMessage :: Message -> Market -> (Event, Market)
@@ -86,7 +86,7 @@ processMessage (Message _ !message) !market =
     query  q   = runIdentity . runQueryEngine (runQuery q)
 ```
 
-# Commands and Interpreter
+## Commands and Interpreter
 
 ```haskell
 data Command
